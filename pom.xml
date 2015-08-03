@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.github.nkzawa</groupId>
   <artifactId>engine.io-client</artifactId>
-  <version>0.5.1</version>
+  <version>0.5.1-patched</version>
   <packaging>jar</packaging>
   <name>engine.io-client</name>
   <description>Engine.IO Client Library for Java</description>
@@ -17,7 +17,7 @@
   <properties>
     <github.global.server>github</github.global.server>
   </properties>
-
+ 
   <licenses>
     <license>
       <name>The MIT License (MIT)</name>
@@ -102,20 +102,20 @@
           </systemProperties>
         </configuration>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-gpg-plugin</artifactId>
-        <version>1.5</version>
-        <executions>
-          <execution>
-            <id>sign-artifacts</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>sign</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+<!--       <plugin> -->
+<!--         <groupId>org.apache.maven.plugins</groupId> -->
+<!--         <artifactId>maven-gpg-plugin</artifactId> -->
+<!--         <version>1.5</version> -->
+<!--         <executions> -->
+<!--           <execution> -->
+<!--             <id>sign-artifacts</id> -->
+<!--             <phase>verify</phase> -->
+<!--             <goals> -->
+<!--               <goal>sign</goal> -->
+<!--             </goals> -->
+<!--           </execution> -->
+<!--         </executions> -->
+<!--       </plugin> -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-source-plugin</artifactId>

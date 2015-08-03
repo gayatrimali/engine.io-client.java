@@ -149,7 +149,7 @@ public class WebSocket extends Transport {
                         } else if (packet instanceof byte[]) {
                             self.ws.sendMessage(BINARY, new Buffer().write((byte[]) packet));
                         }
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         self.onError("websocket error", e);
                     }
                 }
@@ -182,10 +182,10 @@ public class WebSocket extends Transport {
         if (ws != null) {
             try {
                 ws.close(1000, "");
-            } catch (IOException e) {
-                onError("websocket error", e);
             } catch (IllegalStateException e) {
                 // do nothing
+            } catch (Exception e) {
+                onError("websocket error", e);
             }
             ws = null;
         }

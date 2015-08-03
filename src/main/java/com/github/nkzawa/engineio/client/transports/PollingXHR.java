@@ -167,7 +167,7 @@ public class PollingXHR extends Polling {
                 URL url = new URL(this.uri);
                 xhr = (HttpURLConnection)url.openConnection();
                 xhr.setRequestMethod(this.method);
-            } catch (IOException e) {
+            } catch (Exception e) {
                 this.onError(e);
                 return;
             }
@@ -226,12 +226,12 @@ public class PollingXHR extends Polling {
                         } else {
                             self.onError(new IOException(Integer.toString(statusCode)));
                         }
-                    } catch (IOException e) {
+                    } catch (Exception e) {
                         self.onError(e);
                     } finally {
                         try {
                             if (output != null) output.close();
-                        } catch (IOException e) {}
+                        } catch (Exception e) {}
                     }
                 }
             }).start();
@@ -305,15 +305,15 @@ public class PollingXHR extends Polling {
                     }
                     this.onData(data.toString());
                 }
-            } catch (IOException e) {
+            } catch (Exception e) {
                 this.onError(e);
             } finally {
                 try {
                     if (input != null) input.close();
-                } catch (IOException e) {}
+                } catch (Exception e) {}
                 try {
                     if (reader != null) reader.close();
-                } catch (IOException e) {}
+                } catch (Exception e) {}
             }
         }
         public void abort() {
