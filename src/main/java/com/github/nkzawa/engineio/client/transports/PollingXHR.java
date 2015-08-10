@@ -76,7 +76,10 @@ public class PollingXHR extends Polling {
 				EventThread.exec(new Runnable() {
 					@Override
 					public void run() {
-						fn.run();
+						try {
+							fn.run();
+						} catch(Exception e) {							
+						}
 					}
 				});
 			}
